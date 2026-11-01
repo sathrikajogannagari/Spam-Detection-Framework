@@ -33,17 +33,27 @@ The following algorithms are implemented:
 
 ## Dataset
 
-The project uses `features.txt`, which contains six numerical input features and a target column named `class`.
+The project uses `features.txt`, which contains six numerical input features and one target column named `class`.
 
-The dataset contains 36 records. The class labels are represented as:
-- 0 – Non-Spam
-- 1 – Spam
+The dataset contains 36 records with the following features:
 
-The original source and method used to assign these labels should be verified before interpreting the results as validated spam classifications.
+- Replies
+- Behaviour
+- Following
+- Followers
+- Burstiness
+- NegativeRatio
+
+The class labels are represented as:
+
+- `0` – Non-Spam
+- `1` – Spam
+
+The labels are taken directly from the supplied dataset. Their original assignment method has not yet been independently verified.
 
 ## Model Evaluation
 
-The models are evaluated using:
+The models are evaluated using the following performance metrics:
 
 - Accuracy
 - Precision
@@ -51,39 +61,39 @@ The models are evaluated using:
 - F1-score
 - Confusion Matrix
 
-A comparison graph is generated to display classifier performance.
+A comparison graph is generated to display the performance of the four classifiers.
 
-**Note:** The dataset is small (36 records), so evaluation results are preliminary and should not be considered evidence of general model performance.
+**Note:** The dataset contains only 36 records. Therefore, the evaluation results are preliminary and may vary significantly with different train/test splits. They should not be considered evidence of general model performance.
 
 ## Installation and Execution
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/sathrikajogannagari/Spam-Detection-Framework.git
 ```
 
-### 2. Navigate to the project folder
+### 2. Navigate to the Project Folder
 
 ```bash
 cd Spam-Detection-Framework
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the application
+### 4. Run the Application
 
 ```bash
 python spam_detection.py
 ```
 
-### 5. Use the application
+### 5. Use the Application
 
-1. Upload `features.txt`.
+1. Upload the `features.txt` dataset.
 2. Prepare the training and testing data.
 3. Train and evaluate all four classifiers.
 4. View the model comparison graph.
